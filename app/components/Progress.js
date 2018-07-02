@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import './Progress.scss'
+import './Progress.scss';
+import axios from 'axios';
 class Progress extends Component{
     constructor(props){
         super(props);
@@ -12,7 +13,18 @@ class Progress extends Component{
         this.PlayerEnd = this.PlayerEnd.bind(this);
     }
     componentWillMount(){
-        console.log('comopnentwillmount')
+        console.log('comopnentwillmount');
+        axios.get('app/data/list.json', {
+            params: {
+                ID: 12345
+            }
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
     PlayerEnd(){
         this.props.onPlayerEnd&&this.props.onPlayerEnd();
@@ -37,7 +49,9 @@ class Progress extends Component{
                 this.setState({
                     sumTime:e.jPlayer.status.duration
                 });
+                this.props.onSetDuration&&this.props.onSetDuration(Math.round(e.jPlayer.status.duration));
             }
+            this.props.onChangeStatus&&this.props.onChangeStatus(Math.round(e.jPlayer.status.currentTime));
            this.setState({
                playScale:Math.round(e.jPlayer.status.currentTime)/this.state.sumTime*100,
                currentTime:Math.round(e.jPlayer.status.currentTime)

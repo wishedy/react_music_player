@@ -6,7 +6,13 @@ class SwitchBar extends Component{
     }
     render(){
         return(
-            <section className='reactMusicPlayerSwitchBar'></section>
+            <section className='reactMusicPlayerSwitchBar'>
+                <section className='reactMusicPlayerChange upIcon'></section>
+                <section className='reactMusicPlayerChange timeCount'>{this.props.PlayTime}</section>
+                <section className='reactMusicPlayerChange split'>/</section>
+                <section className='reactMusicPlayerChange timeCount'>{this.props.Duration}</section>
+                <section className='reactMusicPlayerChange downIcon'></section>
+            </section>
         )
     }
 }
