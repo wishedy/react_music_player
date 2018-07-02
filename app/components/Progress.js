@@ -24,7 +24,7 @@ class Progress extends Component{
           ready(){
              $(this).jPlayer('setMedia',{
                  mp3:'http://65.ierge.cn/13/207/414364.mp3'
-             }).jPlayer('play');
+             }).jPlayer('pause');
           },
             ended: function() { // The $.jPlayer.event.ended event
                 isThis.PlayerEnd();
