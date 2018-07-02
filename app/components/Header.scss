@@ -1,6 +1,7 @@
 .reactMusicPlayerHeaderWrapper{
   width: 100%;
   height:auto;
+  background: #fff;
   .reactMusicPlayerHeaderInner{
     width: 1220px;
     height: 70px;
@@ -12,7 +13,7 @@
       background: url("../images/music.png") no-repeat center 50%;
       width: 66px;
       height:66px;
-      padding: 2px;
+      padding: 2px 2px 2px 20px;
       float:left;
     }
     .playTitle{

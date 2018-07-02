@@ -1,12 +1,16 @@
 import React,{Component} from 'react';
-import Header from './Header.js'
-import Progress from './Progress.js'
+import './Reset.scss';
+import Header from './Header.js';
+
+import Player from './Player.js';
+import PlayPanel from './PlayPanel.js';
 class Root extends Component {
     render(){
         return(
             <section className='reactMusicPlayerContainer'>
                 <Header/>
-                <Progress/>
+                <Player/>
+                <PlayPanel/>
             </section>
         )
     }
